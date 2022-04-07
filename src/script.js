@@ -44,7 +44,6 @@ const headerCard = (id) => {
   return header;
 }
 
-
 const generateStatusTypes = (index, status) => {
   const statusTypes = ['HP', 'Ataque', 'Defesa', 'Velocidade', 'Total'];
 
@@ -71,6 +70,20 @@ const statusCard = (id) => {
   return status;
 }
 
+const generateSkills = (index, skills) => {
+  return pokemons[index].habilidades.forEach((skill) => {
+    const skillCard = document.createElement('div');
+    skillCard.classList.add('skill-card');
+
+    const skillCardTitle = document.createElement('h1');
+    skillCardTitle.innerHTML = skill;
+
+    skillCard.appendChild(skillCardTitle);
+
+    return skills.appendChild(skillCard);
+  });
+}
+
 const skillsCards = (id) => {
   const skills = document.createElement('div');
   skills.classList.add('skills-div');
@@ -81,8 +94,9 @@ const skillsCards = (id) => {
   skillsTitle.innerHTML = 'Habilidades';
   skills.appendChild(skillsTitle);
 
+  generateSkills(index, skills);
 
-
+  return skills;
 }
 
 const test = (event) => {
@@ -117,6 +131,7 @@ const generateCard = (id = 1) => {
 
   defaultCard.appendChild(headerCard(id));
   defaultCard.appendChild(statusCard(id));
+  defaultCard.appendChild(skillsCards(id));
 
   sectionPokeCard.appendChild(defaultCard);
 }
