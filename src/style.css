@@ -131,3 +131,9 @@ main {
     background: hsla(177, 100%, 30%, 0.8);
     width: 90%;
 }
+
+
+img {
+    width: 100;
+    height: auto;
+}
