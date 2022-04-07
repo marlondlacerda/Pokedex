@@ -9,33 +9,34 @@ const generateID = (id) => {
   return id;
 }
 
-const headerCard = (pokemonIndex = 1 ) => {
+const headerCard = (id) => {
   const header = document.createElement('div');
   header.classList.add('header-card');
 
   const findIndex = pokemons
-    .findIndex(pokemon => pokemon.id === pokemonIndex);
+    .findIndex(pokemon => pokemon.id === id);
 
   const headerContainer1 = document.createElement('div');
   headerContainer1.classList.add('header-container-1');
-  
+
   const headerContainer2 = document.createElement('div');
   headerContainer2.classList.add('header-container-2');
-  
+
   const pokeName = document.createElement('h1');
   pokeName.innerHTML = pokemons[findIndex].nome;
-  headerContainer1.appendChild(pokeName);
-  
+
   const pokeId = document.createElement('h1');
   pokeId.innerHTML = generateID(pokemons[findIndex].id);
-  headerContainer1.appendChild(pokeId);
-  
+
   const pokeType = document.createElement('h1');
   pokeType.innerHTML = pokemons[findIndex].tipo;
-  headerContainer2.appendChild(pokeType);
-  
-  header.appendChild(headerContainer1);
-  header.appendChild(headerContainer2);
+
+  const pokeImg = document.createElement('img');
+  pokeImg.src = pokemons[findIndex].img;
+
+  headerContainer1.append(...[pokeName, pokeId]);
+  headerContainer2.append(...[pokeType, pokeImg]);  
+  header.append(...[headerContainer1, headerContainer2]);
 
   return header;
 }
@@ -44,7 +45,7 @@ const headerCard = (pokemonIndex = 1 ) => {
 const test = (event) => {
   const index = event.path[1].classList[1];
 
-  sectionPokeCard.innerHTML = pokemons[index].nome;
+  sectionPokeCard.innerHTML = pokemons[index].id;
 }
 
 const generateList = () => {
@@ -67,18 +68,18 @@ const generateList = () => {
   });
 };
 
-const generateDefaultCard = () => {
+const generateCard = (id = 1) => {
   const defaultCard = document.createElement('div');
   defaultCard.classList.add('pokemon-card');
 
-  defaultCard.appendChild(headerCard());
+  defaultCard.appendChild(headerCard(id));
 
   sectionPokeCard.appendChild(defaultCard);
 }
 
 window.onload = () => {
   generateList();
-  generateDefaultCard();
+  generateCard();
 
   sectionPokeList.addEventListener('click', (e) => test(e));
 };
