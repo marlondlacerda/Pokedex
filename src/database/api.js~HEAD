@@ -9,8 +9,10 @@ const pokemons = [
     velocidade: 600,
     total: 1700,
     habilidades: [
-      'Choque do trovão',
-      'Cabeçada',
+      {
+        habilidade1: 'Choque do trovão',
+        habilidade2: 'Cabeçada',
+      }
     ],
     img: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png'
   },
@@ -25,8 +27,10 @@ const pokemons = [
     velocidade: 200,
     total: 1430,
     habilidades: [
-      'Folha navalha',
-      'Raio solar',
+      {
+        habilidade1: 'Folha navalha',
+        habilidade2: 'Raio solar',
+      }
     ],
     img: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png'
   },
@@ -41,8 +45,10 @@ const pokemons = [
     velocidade: 320,
     total: 1220,
     habilidades: [
-      'Lança-chamas',
-      'Cabeçada',
+      {
+        habilidade1: 'Lança-chamas',
+        habilidade2: 'Cabeçada',
+      }
     ],
     img: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png'
   },
@@ -57,8 +63,10 @@ const pokemons = [
     velocidade: 300,
     total: 1700,
     habilidades: [
-      `Jato d'água`,
-      'Hidro bomba',
+      {
+        habilidade1: `Jato d'água`,
+        habilidade2: 'Hidro bomba',
+      }
     ],
     img: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/130.png'
   },
@@ -73,8 +81,10 @@ const pokemons = [
     velocidade: 400,
     total: 1000,
     habilidades: [
-      'Bola sombria',
-      'Lambida',
+      {
+        habilidade1: 'Bola sombria',
+        habilidade2: 'Lambida',
+      }
     ],
     img: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png'
   },
@@ -89,12 +99,17 @@ const pokemons = [
     velocidade: 400,
     total: 1900,
     habilidades: [
-      'Dança do dragão',
-      'Velocidade Extrema',
+      {
+        habilidade1: 'Dança do dragão',
+        habilidade2: 'Velocidade Extrema',
+      }
     ],
     img: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png'
   },
 ]
 
+<<<<<<< HEAD:src/database/api.js
 let exports = {};
+=======
+>>>>>>> f8727024d42cca42c134aadeb287a719ee8e84bc:database/api.js
 exports.module = pokemons;

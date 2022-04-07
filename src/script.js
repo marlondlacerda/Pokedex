@@ -64,10 +64,25 @@ const statusCard = (id) => {
 
   const statusTitle = document.createElement('h1');
   statusTitle.innerHTML = 'Status';
+  status.appendChild(statusTitle);
 
   generateStatusTypes(index, status);
 
   return status;
+}
+
+const skillsCards = (id) => {
+  const skills = document.createElement('div');
+  skills.classList.add('skills-div');
+
+  const index = findIndex(id);
+
+  const skillsTitle = document.createElement('h1');
+  skillsTitle.innerHTML = 'Habilidades';
+  skills.appendChild(skillsTitle);
+
+
+
 }
 
 const test = (event) => {
