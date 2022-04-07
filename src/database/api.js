@@ -7,6 +7,7 @@ const pokemons = [
     ataque: 600,
     defesa: 300,
     velocidade: 600,
+    total: 1700,
     habilidades: [
       {
         habilidade1: 'Choque do trovão',

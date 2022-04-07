@@ -9,12 +9,15 @@ const generateID = (id) => {
   return id;
 }
 
+const findIndex = (id) => {
+  return pokemons.findIndex(pokemon => pokemon.id === id);
+}
+
 const headerCard = (id) => {
   const header = document.createElement('div');
   header.classList.add('header-card');
 
-  const findIndex = pokemons
-    .findIndex(pokemon => pokemon.id === id);
+  const index = findIndex(id);
 
   const headerContainer1 = document.createElement('div');
   headerContainer1.classList.add('header-container-1');
@@ -23,16 +26,16 @@ const headerCard = (id) => {
   headerContainer2.classList.add('header-container-2');
 
   const pokeName = document.createElement('h1');
-  pokeName.innerHTML = pokemons[findIndex].nome;
+  pokeName.innerHTML = pokemons[index].nome;
 
   const pokeId = document.createElement('h1');
-  pokeId.innerHTML = generateID(pokemons[findIndex].id);
+  pokeId.innerHTML = generateID(id);
 
   const pokeType = document.createElement('h1');
-  pokeType.innerHTML = pokemons[findIndex].tipo;
+  pokeType.innerHTML = pokemons[index].tipo;
 
   const pokeImg = document.createElement('img');
-  pokeImg.src = pokemons[findIndex].img;
+  pokeImg.src = pokemons[index].img;
 
   headerContainer1.append(...[pokeName, pokeId]);
   headerContainer2.append(...[pokeType, pokeImg]);  
@@ -41,6 +44,31 @@ const headerCard = (id) => {
   return header;
 }
 
+
+const generateStatusTypes = (index, status) => {
+  const statusTypes = ['HP', 'Ataque', 'Defesa', 'Velocidade', 'Total'];
+
+  return statusTypes.forEach((type) => {
+    const typeStatus = document.createElement('h2');
+    typeStatus.innerHTML = `${type}: ${pokemons[index][type.toLowerCase()]}`;
+
+    return status.appendChild(typeStatus);
+  });
+}
+
+const statusCard = (id) => {
+  const status = document.createElement('div');
+  status.classList.add('status-div');
+
+  const index = findIndex(id);
+
+  const statusTitle = document.createElement('h1');
+  statusTitle.innerHTML = 'Status';
+
+  generateStatusTypes(index, status);
+
+  return status;
+}
 
 const test = (event) => {
   const index = event.path[1].classList[1];
@@ -73,6 +101,7 @@ const generateCard = (id = 1) => {
   defaultCard.classList.add('pokemon-card');
 
   defaultCard.appendChild(headerCard(id));
+  defaultCard.appendChild(statusCard(id));
 
   sectionPokeCard.appendChild(defaultCard);
 }
