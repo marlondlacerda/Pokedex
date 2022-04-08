@@ -42,4 +42,10 @@ const generateID = (id) => {
 window.addEventListener('load',()=>{
     createList();
     changePokemon(pokemons[0]);
+})  
+
+window.addEventListener("keydown", e => {
+    const key = e.code, id = parseInt(document.querySelector('#poke-id').innerText.replace("#",""));
+    if(key == "ArrowUp") changePokemon(pokemons[id - 1]);
+    if(key == "ArrowDown") changePokemon(pokemons[id + 1]);
 })
