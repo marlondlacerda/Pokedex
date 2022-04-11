@@ -29,11 +29,7 @@ const generateID = (id) => {
   return id;
 };
 
-const cleanString = (string) => {
-  const res = string.normalize('NFD').replace(/\p{Diacritic}/gu, '');
-  
-  return res;
-};
+const cleanString = (string) => string.normalize('NFD').replace(/\p{Diacritic}/gu, '');
 
 const upateCard = (typeString) => {
   const cardHTML = document.querySelector('.card-top');
@@ -41,8 +37,8 @@ const upateCard = (typeString) => {
   const types = typeString.split('/');
 
   cardHTML.classList = `card-top ${cleanString(types[0])}`;
+  
   typesHTMl.innerHTML = '';
-
   types.forEach((tp) => {
     typesHTMl.innerHTML += `<p class="poke-type ${cleanString(tp)}">${tp}</p>`;
   });
@@ -65,10 +61,12 @@ const updateStatus = (pokemon) => {
 
 const changePokemon = (pokemon) => {
   const pokeImage = document.querySelector('#poke-image');
+  const actionLed = document.querySelector('#action-led');
 
   pokeImage.innerHTML = `<img src="${pokemon.img}" alt="${pokemon.nome}">`;
 
   addAnimation(pokeImage, 'fade', 0.4);
+  addAnimation(actionLed, 'action-alert', 0.2);
   changeTxt('#poke-id span', generateID(pokemon.id));
   changeTxt('#poke-name span', pokemon.nome);
   selectPokemon(pokemon.id);
