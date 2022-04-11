@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "luisArthurRodriguesDaSilva",
+      "name": "Luis Arthur Rodrigues da Silva",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66787949?v=4",
+      "profile": "https://github.com/luisArthurRodriguesDaSilva",
+      "contributions": [
+        "ideas",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Pokedex",
+  "projectOwner": "marlondlacerda",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
