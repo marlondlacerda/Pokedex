@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "wanlucas",
+      "name": "Wan Lucas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76530841?v=4",
+      "profile": "https://github.com/wanlucas",
+      "contributions": [
+        "ideas",
+        "code",
+        "content",
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Pokedex",
+  "projectOwner": "marlondlacerda",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
